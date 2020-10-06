@@ -1,38 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass+Mono&display=swap");
+
+:root {
+  --primary: #00b0ff;
+  --secondary: #00bfa6;
+  --error: red;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Overpass Mono", monospace;
+}
+
 .App {
+  margin: 0 120px;
+}
+
+.App header {
+  height: 8vh;
+  min-height: 50px;
+  color: black;
+  width: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 99;
+  box-sizing: border-box;
+}
+.App header p {
+  font-size: 28px;
+  color: var(--primary);
+}
+
+.App header a {
+  color: var(--primary);
+  text-decoration: none;
+}
+.title h2,
+.title p {
+  color: var(--secondary);
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title h2 {
+  margin-top: 60px;
+  font-size: 2.6rem;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+form {
+  margin: 30px auto 10px;
+  text-align: center;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+label input {
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+label {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--primary);
+  border-radius: 50%;
+  margin: 10px auto;
+  line-height: 30px;
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 24px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+label:hover {
+  background: var(--primary);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.output {
+  height: 60px;
+  font-size: 0.8rem;
+}
+.error {
+  color: var(--error);
+}
+.progress-bar {
+  height: 5px;
+  background: var(--primary);
+  margin-top: 20px;
+}
+.image-grid {
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 40px;
+}
+.image-wrap {
+  overflow: hidden;
+  height: 0;
+  padding: 50% 0;
+  /* padding controls height, will always be perfectly square regardless of width */
+  position: relative;
+  opacity: 0.8;
+}
+.image-wrap img {
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 150%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.backdrop img {
+  display: block;
+  max-width: 60%;
+  max-height: 80%;
+  margin: 60px auto;
+  box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
+  border: 3px solid white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 768px) {
+  .App {
+    margin: 0 100px;
   }
-  to {
-    transform: rotate(360deg);
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .title h2 {
+    font-size: 2rem;
+  }
+  label {
+    font-size: 32px;
+    width: 40px;
+    line-height: 40px;
+    height: 40px;
+  }
+  .backdrop img {
+    display: block;
+    max-width: 80%;
+    max-height: 90%;
+    margin: 60px auto;
+    box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
+    border: 3px solid white;
+  }
+}
+@media (max-width: 690px) {
+  .App {
+    margin: 0 40px;
+  }
+}
+@media (max-width: 414px) {
+  .App {
+    margin: 0 20px;
+  }
+  .App header p {
+    font-size: 24px;
+  }
+
+  .App header a {
+    font-size: 24px;
+  }
+  .title h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 412px) {
+  .App {
+    margin: 0 20px;
+  }
+  .App header p {
+    font-size: 20px;
+  }
+
+  .App header a {
+    font-size: 20px;
+  }
+  .title h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .App {
+    margin: 0 10px;
+  }
+  .App header p {
+    font-size: 18px;
+  }
+
+  .App header a {
+    font-size: 18px;
+  }
+  .title h2 {
+    font-size: 1.6rem;
   }
 }
