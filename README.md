@@ -10,4 +10,4 @@ Ghost gallery is a simple Photo gallery application build with Reactjs and Fireb
 
 ## Live Demo :
 
-- you can see a live demo h [here.](https://ghost-photogallery.web.app/)
+- you can see a live demo [here.](https://ghost-photogallery.web.app/)
