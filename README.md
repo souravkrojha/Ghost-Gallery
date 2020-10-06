@@ -1,6 +1,7 @@
 # Ghost Gallery:
 
 Ghost gallery is a simple Photo gallery application build with Reactjs and Firebase.
+you can click on the plus button on the website to add an image to the online photo gallery.
 
 ## Connect:
 
